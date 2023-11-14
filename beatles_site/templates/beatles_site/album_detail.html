@@ -1,19 +1,30 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ name }}</title>
+    <link rel="stylesheet" href="{% static "beatles_site/album.css" %}">
+    <title>Beatles Discography | {{ album.name }}</title>
 </head>
 
 <body>
+
     <header>
-        <h1>{{ name }}</h1>
+        <h1>{{ album.name }}</h1>
     </header>
 
     <main>
+        <h2>Album info:</h2>
+        <p><strong>Release Year: </strong>{{ album.release_year }}</p>
+        <p><strong>Label: </strong>{{ album.label }}</p>
+        <p><strong>Fun Fact: </strong>{{ album.fun_fact }}</p>
     </main>
+
+    <footer>
+        <h1><a href ="{% url 'home'  %}">Home</a></h1>
+    </footer>
 
 
 

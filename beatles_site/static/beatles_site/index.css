@@ -1,0 +1,107 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background: #000;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: normal;
+    letter-spacing: 2px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 2rem;
+}
+
+h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+a {
+    display: block;
+    background: #fff;
+    padding: 1rem;
+    border: 2px solid #333;
+    border-radius: 10px;
+    color: #333;
+    box-shadow: 3px 3px 0 rgba(0,0,0,0.2);
+    transition: all 0.3s ease-in-out;
+}
+
+a:hover {
+    background: #333;
+    color: #fff;
+    border-color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 5px 5px 0 rgba(0,0,0,0.2);
+}
+
+/* Add a Beatles-themed font */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap');
+
+body {
+    font-family: 'Merriweather', serif;
+    background-image: linear-gradient(to bottom, #dbebfa, #f0f0f0);
+}
+
+header {
+    background-image: linear-gradient(to right, #1c1c1c, #474747);
+    box-shadow: 0 4px 2px -2px gray;
+}
+
+/* Make the links look like vinyl records */
+a {
+    background-image: radial-gradient(circle at center, #ffffff 10%, #000000 40%, #444444 70%);
+    color: #ffffff;
+    text-align: center;
+    font-weight: bold;
+    border: none;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin: auto;
+}
+
+a:hover {
+    background-image: radial-gradient(circle at center, #ffffff 10%, #ff0000 40%, #444444 70%);
+    box-shadow: 0 8px 6px -6px black;
+}
+
+/* Responsive typography */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    h1 {
+        font-size: 1.2rem;
+    }
+}
