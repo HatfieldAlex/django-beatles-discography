@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Album
+from .models import Album, Track
 from django.shortcuts import get_object_or_404
 
 # Create your views here.
@@ -13,16 +13,10 @@ def album_detail(request, album_name_slug):
     album = get_object_or_404(Album, slug=album_name_slug)
     return render(request, "beatles_site/album_detail.html", {'album': album})
 
-
-def please_please_me(request):
-    return render(request, 'beatles_site/albums/please_please_me.html')
-
-def help(request):
-    return render(request, 'beatles_site/albums/help.html')
-
-def let_it_be(request):
-    return render(request, 'beatles_site/albums/let_it_be.html')
-
+def album_tracks(request, album_name_slug):
+    album = get_object_or_404(Album, slug=album_name_slug)
+    tracks = Track.objects.filter(album=album)
+    return render(request, "beatles_site/tracks.html", {'tracks': tracks, "album": album})
 
 
 # def album_detail(request, album_name_slug):

@@ -1,27 +1,16 @@
+{% extends "base.html" %}
+
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static "beatles_site/index.css" %}">
-    <title>Beatles Discography</title>
-</head>
-<body>
 
-    <header>
-        <h1>Beatles Discography</h1>
-    </header>
+{% block page_title %}
+Beatles Discography
+{% endblock %}
 
 
-
+{% block content %}
     <div class="container">
         {% for album in albums %}
         <h1><a href ="{% url 'album_detail' album_name_slug=album.slug  %}">{{ album.name }}</a></h1>
         {% endfor %}
-
-    </div>
-</body>
-</html>
+{% endblock %}

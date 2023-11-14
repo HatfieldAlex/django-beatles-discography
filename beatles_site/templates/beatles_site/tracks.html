@@ -16,20 +16,12 @@
     </header>
 
     <main>
-        <h2>Album info:</h2>
-        <p><strong>Release Year: </strong>{{ album.release_year }}</p>
-        <p><strong>Label: </strong>{{ album.label }}</p>
-        <p><strong>Fun Fact: </strong>{{ album.fun_fact }}</p>
-        <p><a href ="{% url 'album_tracks' album_name_slug=album.slug %}">tracks</a></p>
+        {% for track in tracks %}
+        <li>{{ track.position }}, {{track.title }}, {{ track.duration}}, {{ track.lead_vocals }}</li>
+        {% endfor %}
     </main>
 
     <footer>
         <h1><a href ="{% url 'home'  %}">Home</a></h1>
     </footer>
 
-
-
-
-
-</body>
-</html>

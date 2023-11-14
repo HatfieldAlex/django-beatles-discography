@@ -11,3 +11,13 @@ class Album(models.Model):
 
     def __str__(self):
         return self.name
+
+class Track(models.Model):
+    album = models.ForeignKey(Album, on_delete=models.CASCADE, related_name='tracks')
+    title = models.CharField(max_length=100)
+    duration = models.DurationField()
+    position = models.IntegerField()
+    lead_vocals = models.CharField(max_length=100, default='Lennon and McCartney')
+
+    def __str__(self):
+        return self.title

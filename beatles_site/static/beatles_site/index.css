@@ -1,107 +1,89 @@
-/* General Reset */
+/* Base reset styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    text-decoration: none;
 }
 
-body {
+body, html {
+    height: 100%;
     font-family: 'Arial', sans-serif;
-    background-color: #f0f0f0;
-    color: #333;
-    line-height: 1.6;
+}
+
+/* Background image can be a black and white photo related to the album */
+body {
+    background: url('path-to-beatles-black-and-white-photo.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+    position: relative;
+    padding-bottom: 60px; /* Adjusted to make space for the footer */
 }
 
 header {
-    background: #000;
-    color: #fff;
-    padding: 1rem 0;
+    background: rgba(0, 0, 0, 0.8);
     text-align: center;
+    padding: 20px 0;
 }
 
 header h1 {
-    margin: 0;
-    font-size: 2.5rem;
-    font-weight: normal;
+    font-size: 3em;
+    font-weight: 300;
+}
+
+main {
+    width: 80%;
+    max-width: 800px;
+    margin: 50px auto;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 5px;
+}
+
+h2 {
+    margin-bottom: 10px;
+    text-transform: uppercase;
     letter-spacing: 2px;
 }
 
-.container {
-    max-width: 1200px;
-    margin: auto;
-    padding: 2rem;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-gap: 2rem;
+p {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    line-height: 1.4;
+    padding: 5px 0;
 }
 
-h1 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-}
-
-a {
-    display: block;
-    background: #fff;
-    padding: 1rem;
-    border: 2px solid #333;
-    border-radius: 10px;
-    color: #333;
-    box-shadow: 3px 3px 0 rgba(0,0,0,0.2);
-    transition: all 0.3s ease-in-out;
-}
-
-a:hover {
-    background: #333;
-    color: #fff;
-    border-color: #fff;
-    transform: translateY(-3px);
-    box-shadow: 5px 5px 0 rgba(0,0,0,0.2);
-}
-
-/* Add a Beatles-themed font */
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap');
-
-body {
-    font-family: 'Merriweather', serif;
-    background-image: linear-gradient(to bottom, #dbebfa, #f0f0f0);
-}
-
-header {
-    background-image: linear-gradient(to right, #1c1c1c, #474747);
-    box-shadow: 0 4px 2px -2px gray;
-}
-
-/* Make the links look like vinyl records */
-a {
-    background-image: radial-gradient(circle at center, #ffffff 10%, #000000 40%, #444444 70%);
-    color: #ffffff;
-    text-align: center;
+p strong {
     font-weight: bold;
-    border: none;
-    border-radius: 50%;
-    width: 200px;
-    height: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    margin: auto;
 }
 
-a:hover {
-    background-image: radial-gradient(circle at center, #ffffff 10%, #ff0000 40%, #444444 70%);
-    box-shadow: 0 8px 6px -6px black;
-}
-
-/* Responsive typography */
+/* Responsive typography and layout */
 @media (max-width: 768px) {
     header h1 {
-        font-size: 2rem;
+        font-size: 2em;
     }
 
-    h1 {
-        font-size: 1.2rem;
+    main {
+        width: 95%;
     }
+
+    p {
+        font-size: 1em;
+    }
+}
+
+/* Footer styles */
+footer {
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed; /* Changed to fixed */
+    bottom: 0;
+    width: 100%;
+    z-index: 1000; /* To ensure it stays on top of other elements */
+}
+
+footer p {
+    margin: 0;
+    font-size: 1em;
 }
